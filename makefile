@@ -13,7 +13,7 @@ $(NAME): $(OBJS)
 	$(AR) $(NAME) $(OBJS) 
 
 %.o: %.c $(HEADER) 
-	$(CC) $(CF) -c 
+	$(CC) $(CF) -c $c -o $@
 
 clean:
 	rm -f  $(OBJS)
