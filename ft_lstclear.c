@@ -6,7 +6,7 @@
 /*   By: ameryan <ameryan@student.42amman.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/11 15:06:38 by ameryan           #+#    #+#             */
-/*   Updated: 2026/10/11 17:43:42 by ameryan          ###   ########.fr       */
+/*   Updated: 2026/10/12 14:50:19 by ameryan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void ft_lstclear(t_list **lst, void (*del)(void*))
 		*lst = temp;
 	}
 }
-int main()
+/*int main()
 {
 	
-}
+}*/

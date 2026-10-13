@@ -6,7 +6,7 @@
 /*   By: ameryan <ameryan@student.42amman.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/04 16:38:41 by ameryan           #+#    #+#             */
-/*   Updated: 2026/10/04 16:43:50 by ameryan          ###   ########.fr       */
+/*   Updated: 2026/10/12 18:22:57 by ameryan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,20 @@ void ft_striteri(char *s, void (*f)(unsigned int, char*))
 		f(i, &s[i]);
 		i++;
 	}
+}
+
+static void	to_upper(unsigned int i, char *c)
+{
+(void) i;
+if (*c >= 'a' && *c <= 'z')
+*c = *c - 32;
+}
+
+int	main(void)
+{
+char	str[] = "hello world";
+
+ft_striteri(str, to_upper);
+printf("%s\n", str);
+return (0);
 }

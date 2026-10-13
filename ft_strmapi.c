@@ -6,7 +6,7 @@
 /*   By: ameryan <ameryan@student.42amman.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/04 16:01:56 by ameryan           #+#    #+#             */
-/*   Updated: 2026/10/04 16:37:41 by ameryan          ###   ########.fr       */
+/*   Updated: 2026/10/12 18:16:09 by ameryan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,3 +34,4 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
     str[i] = '\0';
 	return(str);
 }
+

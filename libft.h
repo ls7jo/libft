@@ -6,7 +6,7 @@
 /*   By: ameryan <ameryan@student.42amman.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/29 18:24:08 by ameryan           #+#    #+#             */
-/*   Updated: 2026/10/11 17:08:49 by ameryan          ###   ########.fr       */
+/*   Updated: 2026/10/12 14:22:29 by ameryan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ struct s_list *next;
 # include <stdio.h>
 # include <string.h>
 
+void ft_lstclear(t_list **lst, void (*del)(void*));
 void ft_lstdelone(t_list *lst, void (*del)(void*));
 void ft_lstadd_back(t_list **lst, t_list *new);
 void ft_lstadd_front(t_list **lst, t_list *new);
