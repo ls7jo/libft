@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ameryan <ameryan@student.42amman.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/24 16:39:26 by username          #+#    #+#             */
-/*   Updated: 2026/09/29 13:58:43 by ameryan          ###   ########.fr       */
+/*   Created: 2026/10/15 15:03:06 by ameryan           #+#    #+#             */
+/*   Updated: 2026/10/15 15:03:09 by ameryan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,4 +36,9 @@ int	ft_atoi(const char *str)
 		count++;
 	}
 	return (sign * num);
+}
+
+int main ()
+{
+	printf("%d", ft_atoi("2147483648"));
 }

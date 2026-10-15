@@ -6,13 +6,13 @@
 /*   By: ameryan <ameryan@student.42amman.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/03 15:07:56 by ameryan           #+#    #+#             */
-/*   Updated: 2026/10/04 14:03:44 by ameryan          ###   ########.fr       */
+/*   Updated: 2026/10/15 13:25:20 by ameryan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	findcount(int n)
+static size_t	findcount(long n)
 {
 	int	count;
 
@@ -35,31 +35,32 @@ static int	findcount(int n)
 char	*ft_itoa(int n)
 {
 	char	*str;
-	int		i;
-	int		count;
+	size_t	i;
+	size_t	count;
+	long	num;
 
-	count = findcount(n);
+	num = n;
+	count = findcount(num);
 	str = malloc(count + 1);
 	if (!str)
 		return (NULL);
-	if (n == 0)
+	if (num == 0)
 		str[0] = '0';
-	if (n < 0)
+	if (num < 0)
 	{
 		str[0] = '-';
-		n = -n;
+		num = -num;
 	}
 	i = count - 1;
-	while (n != 0)
+	while (num > 0)
 	{
-		str[i] = n % 10 + '0';
-		n = n / 10;
-		i--;
+		str[i--] = num % 10 + '0';
+		num = num / 10;
 	}
 	str[count] = '\0';
 	return (str);
 }
-int main ()
+/*int main ()
 {
 	printf("%s\n", ft_itoa(-1200075599));
-}
+}*/

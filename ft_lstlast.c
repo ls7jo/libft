@@ -5,20 +5,20 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ameryan <ameryan@student.42amman.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/05 22:01:08 by ameryan           #+#    #+#             */
-/*   Updated: 2026/10/05 22:07:05 by ameryan          ###   ########.fr       */
+/*   Created: 2026/10/15 15:02:06 by ameryan           #+#    #+#             */
+/*   Updated: 2026/10/15 15:02:09 by ameryan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list *ft_lstlast(t_list *lst)
+t_list	*ft_lstlast(t_list *lst)
 {
-	if(lst == NULL)
-		return(NULL);
-	while (lst->next != NULL)
+	if (!lst)
+		return (NULL);
+	while (lst->next)
 	{
 		lst = lst->next;
 	}
-	return(lst);
+	return (lst);
 }

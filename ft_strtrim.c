@@ -5,76 +5,70 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ameryan <ameryan@student.42amman.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/30 19:30:37 by ameryan           #+#    #+#             */
-/*   Updated: 2026/10/03 15:12:11 by ameryan          ###   ########.fr       */
+/*   Created: 2026/10/15 15:00:20 by ameryan           #+#    #+#             */
+/*   Updated: 2026/10/15 15:00:21 by ameryan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	returnindlast(const char *s1, const char *s2, int start, int end)
+static int	isset(const char *set, char c)
 {
-	int	j;
-	int	i;
+	size_t	i;
 
-	i = end;
-	while (s1[i] && s2[j] && i >= start)
+	i = 0;
+	while (set[i])
 	{
-		while (s1[i] == s2[j])
-		{
-			i--;
-			j = 0;
-		}
-		j++;
+		if (set[i] == c)
+			return (1);
+		i++;
+	}
+	return (0);
+}
+
+static int	returnindlast(const char *s1, const char *s2, size_t st, size_t end)
+{
+	size_t	i;
+
+	i = st;
+	while (i >= end && isset(s2, s1[i]))
+	{
+		i--;
 	}
 	return (i);
 }
 
-static int	returnind(const char *s1, const char *s2, int start, int end)
+static int	returnind(const char *s1, const char *s2, size_t start, size_t end)
 {
-	int	j;
-	int	i;
+	size_t	i;
 
 	i = start;
-	while (s1[i] && s2[j] && i <= end)
+	while (i < end && isset(s2, s1[i]))
 	{
-		while (s1[i] == s2[j])
-		{
-			i++;
-			j = 0;
-		}
-		j++;
+		i++;
 	}
 	return (i);
 }
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	int		i;
-	int		strlen;
-	int		start;
-	int		end;
+	size_t	i;
+	size_t	strlen;
+	size_t	start;
+	size_t	end;
 	char	*trimstr;
 
 	if (!set)
-		return(ft_strdup(s1));
-	if(!s1)
-		return(NULL);
+		return (ft_strdup(s1));
+	if (!s1)
+		return (ft_strdup(""));
 	strlen = ft_strlen(s1);
 	i = 0;
 	start = returnind(s1, set, i, strlen);
-	end = returnindlast(s1, set, strlen, strlen - start + 1);
+	end = returnindlast(s1, set, strlen - 1, start);
+	if (end < start)
+		return (ft_strdup(""));
 	trimstr = ft_substr(s1, start, end - start + 1);
 	return (trimstr);
 }
-/*int main ()
-{
-	char s[] = "eehmeje 00behh";
-	char ne[] = "hem";
-	int y = ft_strlen(s);
-	char *tr = ft_strtrim(s, ne);
-	//int start = returnind(s, ne , 0, y);
-	printf("%s\n", tr);
-	//printf("%i\n", returnindlast(s, ne, start, y));
-	
-}*/
+// //}

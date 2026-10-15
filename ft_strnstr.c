@@ -5,32 +5,42 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ameryan <ameryan@student.42amman.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/27 11:19:06 by username          #+#    #+#             */
-/*   Updated: 2026/09/29 18:11:52 by ameryan          ###   ########.fr       */
+/*   Created: 2026/10/15 15:06:08 by ameryan           #+#    #+#             */
+/*   Updated: 2026/10/15 15:06:09 by ameryan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(char *str, char *to_find, size_t len)
+char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 {
-	int	u;
-	int	l;
+	size_t	u;
+	size_t	l;
+	char	*big;
+	char	*little;
 
 	u = 0;
 	l = 0;
+	big = (char *)str;
+	little = (char *)to_find;
 	if (to_find[0] == '\0')
-		return (str);
-	while (str[u] != '\0' && u < (int) len)
+		return (big);
+	while (big[u] != '\0' && u < len)
 	{
 		l = 0;
-		while (to_find[l] != '\0' && str[u + l] == to_find[l])
+		while (u + l < len && big[l] != '\0' && big[u + l] == little[l])
 		{
+			if (little[l + 1] == '\0')
+				return (&big[u]);
 			l++;
 		}
-		if (to_find[l] == '\0')
-			return (&str[u]);
 		u++;
 	}
 	return (NULL);
 }
+// int main()
+// {
+// 	char str[] = "abdallah";
+// 	char littel[] = "";
+// 	printf("%s", ft_strnstr(str, littel, 9));
+// }

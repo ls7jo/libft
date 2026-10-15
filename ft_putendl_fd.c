@@ -5,29 +5,21 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ameryan <ameryan@student.42amman.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/04 18:55:25 by ameryan           #+#    #+#             */
-/*   Updated: 2026/10/04 19:04:11 by ameryan          ###   ########.fr       */
+/*   Created: 2026/10/15 15:05:00 by ameryan           #+#    #+#             */
+/*   Updated: 2026/10/15 15:05:02 by ameryan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-void ft_putendl_fd(char *s, int fd)
-{
-	int len;
-	int i;
 
-	i = 0;
-	len = ft_strlen(s);
-	while(i < len)
-	{
-		write(fd, &s[i], 1);
-		i++;
-	}
+void	ft_putendl_fd(char *s, int fd)
+{
+		write(fd, s, ft_strlen(s));
 	write(fd, "\n", 1);
 }
-int main ()
+/*int main ()
 {
-	char ch[] = "lol22";
+char	ch[] = "lol22";
 
-	ft_putendl_fd(ch, 1);
-}
+ft_putendl_fd(ch, 1);
+}*/

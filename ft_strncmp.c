@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                       :::      ::::::::    */
-/*   ft_strncmp.c                                      :+:      :+:    :+:    */
-/*                                                   +:+ +:+         +:+      */
-/*   By: username <username@student.42tokyo.jp>    #+#  +:+       +#+         */
-/*                                               +#+#+#+#+#+   +#+            */
-/*   Created: 2026/09/27 08:50:27 by username         #+#    #+#              */
-/*   Updated: 2026/09/27 17:25:24 by username        ###   ########.fr        */
+/*                                                        :::      ::::::::   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ameryan <ameryan@student.42amman.com>      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/10/15 15:06:00 by ameryan           #+#    #+#             */
+/*   Updated: 2026/10/15 15:06:01 by ameryan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,24 @@
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
-	while (i < n && (s1[i] != '\0' || s2[i] != '\0'))
+	while (i < n && s1[i] != '\0' && s1[i] == s2[i])
 	{
-		if (s1[i] != s2[i])
-			return (s1[i] - s2[i]);
 		i++;
 	}
-	return (0);
+	if (i >= n)
+		return (0);
+	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }
+
+// #include <string.h>
+// int main ()
+// {
+// 	signed char s1[] = "test";
+// 	signed char s2[] = "test";
+// 	size_t i = 4;
+// int	o = ft_strncmp((const char *)s1, (const char *)s2 , i);
+// printf("%i", o);
+// }

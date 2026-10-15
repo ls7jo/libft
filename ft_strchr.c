@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ameryan <ameryan@student.42amman.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/27 07:49:25 by username          #+#    #+#             */
-/*   Updated: 2026/09/29 18:13:23 by ameryan          ###   ########.fr       */
+/*   Created: 2026/10/15 15:05:24 by ameryan           #+#    #+#             */
+/*   Updated: 2026/10/15 15:05:25 by ameryan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,11 @@ char	*ft_strchr(const char *s, int c)
 	i = 0;
 	while (s[i])
 	{
-		if (s[i] == (char) c)
-			return ((char *) s + i);
+		if (s[i] == (char)c)
+			return ((char *)s + i);
 		i++;
 	}
+	if (s[i] == (char)c)
+		return ((char *)s + i);
 	return (NULL);
 }

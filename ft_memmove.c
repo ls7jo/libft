@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ameryan <ameryan@student.42amman.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/23 17:33:49 by username          #+#    #+#             */
-/*   Updated: 2026/09/29 18:18:56 by ameryan          ###   ########.fr       */
+/*   Created: 2026/10/15 15:03:52 by ameryan           #+#    #+#             */
+/*   Updated: 2026/10/15 15:03:56 by ameryan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	char			*src1;
 
 	i = 0;
-	des = (char *) dest;
-	src1 = (char *) src;
+	des = (char *)dest;
+	src1 = (char *)src;
 	if (des > src1)
 	{
 		while (n != 0)

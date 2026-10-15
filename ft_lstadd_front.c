@@ -5,16 +5,17 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ameryan <ameryan@student.42amman.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/05 20:28:38 by ameryan           #+#    #+#             */
-/*   Updated: 2026/10/05 21:57:26 by ameryan          ###   ########.fr       */
+/*   Created: 2026/10/15 15:02:36 by ameryan           #+#    #+#             */
+/*   Updated: 2026/10/15 15:02:37 by ameryan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-void ft_lstadd_front(t_list **lst, t_list *new)
+
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
 	if (!lst || !new)
-		return;
+		return ;
 	new->next = *lst;
-	*lst = new;	
+	*lst = new;
 }

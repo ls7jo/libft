@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ameryan <ameryan@student.42amman.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/04 19:04:46 by ameryan           #+#    #+#             */
-/*   Updated: 2026/10/04 19:16:00 by ameryan          ###   ########.fr       */
+/*   Created: 2026/10/15 15:05:06 by ameryan           #+#    #+#             */
+/*   Updated: 2026/10/15 15:05:07 by ameryan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_fd(int n, int fd)
 {
 	char	u;
 
@@ -38,8 +38,8 @@ void ft_putnbr_fd(int n, int fd)
 		write(fd, &u, 1);
 	}
 }
-int main ()
+/*int main ()
 {
-	int i = -234;
-	ft_putnbr_fd(i, 1);
-}
+int		i = -234;
+ft_putnbr_fd(i, 1);
+}*/

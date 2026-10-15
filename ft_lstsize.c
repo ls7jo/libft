@@ -5,16 +5,16 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ameryan <ameryan@student.42amman.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/05 21:58:10 by ameryan           #+#    #+#             */
-/*   Updated: 2026/10/05 22:00:27 by ameryan          ###   ########.fr       */
+/*   Created: 2026/10/15 15:03:30 by ameryan           #+#    #+#             */
+/*   Updated: 2026/10/15 15:03:31 by ameryan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-unsigned int ft_lstsize(t_list *lst)
+unsigned int	ft_lstsize(t_list *lst)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (lst != NULL)
@@ -22,5 +22,5 @@ unsigned int ft_lstsize(t_list *lst)
 		lst = lst->next;
 		i++;
 	}
-	return(i);
+	return (i);
 }
