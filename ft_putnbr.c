@@ -1,28 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ameryan <ameryan@student.42amman.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/15 15:04:42 by ameryan           #+#    #+#             */
-/*   Updated: 2026/10/15 15:04:43 by ameryan          ###   ########.fr       */
+/*   Created: 2026/10/28 19:26:17 by ameryan           #+#    #+#             */
+/*   Updated: 2026/10/28 20:28:11 by ameryan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-void	ft_putchar_fd(char c, int fd)
+int ft_putnbr(int n)
 {
-	write(fd, &c, 1);
+	long num;
+	
+	num = n;
+	if(n < 0)
+	{
+		num = -num;
+		write(1, '-', 1);
+	}
+	if(num > 9)
+	{
+		num = (n % 10) + '0';
+		ft_putnbr(n / 10);
+		write(1, &num, 1);
+	}
+	if (n < 10)
+	{
+		num = n + '0';
+		write(1, &num, 1);
+	}
 }
-// #include <stdio.h>
-// #include <fcntl.h>
-// int main ()
-// {
-
-// 	char *name = "test.txt";
-// 	int fd = open(name, O_WRONLY | O_CREAT | O_TRUNC, 0644);
-// 	ft_putchar_fd('t', fd);
-// 	printf("%d", fd);
-// }

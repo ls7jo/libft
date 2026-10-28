@@ -1,21 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ameryan <ameryan@student.42amman.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/15 15:02:36 by ameryan           #+#    #+#             */
-/*   Updated: 2026/10/15 15:02:37 by ameryan          ###   ########.fr       */
+/*   Created: 2026/10/28 19:11:07 by ameryan           #+#    #+#             */
+/*   Updated: 2026/10/28 19:24:24 by ameryan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-void	ft_lstadd_front(t_list **lst, t_list *new)
+#include "ft_printf.h"
+int	ft_putstr(char *s)
 {
-	if (!lst || !new)
-		return ;
-	new->next = *lst;
-	*lst = new;
+	int i;
+
+	i = 0;
+	if (!s)
+		return (write(1, "(null)", 6));
+	while (s[i])
+		i++;
+	write(1, s, i);
+	return(i);
 }

@@ -1,18 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ameryan <ameryan@student.42amman.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/22 09:35:55 by ameryan           #+#    #+#             */
-/*   Updated: 2026/09/22 10:17:06 by ameryan          ###   ########.fr       */
+/*   Created: 2026/10/19 15:43:53 by ameryan           #+#    #+#             */
+/*   Updated: 2026/10/28 19:24:48 by ameryan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(int c)
-{
-	if ((65 <= c && c <= 90) || (97 <= c && c <= 122))
-		return (1);
-	return (0);
-}
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
+
+# include <stdio.h>
+# include <stdarg.h>
+# include <unistd.h>
+
+int	ft_printf(const	char *format, ...);
+int	ft_putchar(char c);
+int	ft_putstr(char *s);
+
+#endif
