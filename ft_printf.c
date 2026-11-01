@@ -6,7 +6,7 @@
 /*   By: ameryan <ameryan@student.42amman.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/19 15:17:14 by username          #+#    #+#             */
-/*   Updated: 2026/10/28 19:26:03 by ameryan          ###   ########.fr       */
+/*   Updated: 2026/11/01 20:16:01 by ameryan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,15 @@ int	ft_printf(const	char *format, ...)
 			else if (*format == 's')
 				count += ft_putstr(va_arg(ap, char *));
 			else if (*format == 'd' || *format == 'i')
-					
-			count++;
+				count += ft_putnbr(va_arg(ap, int));
+			else if (*format == 'x')
+				count += ft_putnbr_hexa(va_arg(ap, unsigned long), "0123456789abcdef");
+			else if (*format == 'X')
+				count += ft_putnbr_hexa(va_arg(ap, unsigned long), "0123456789ABCDEF");
+			else if (*format == 'u')
+				count += ft_putnbr_un(va_arg(ap, unsigned int));
+			else if (*format == 'p')
+				count += ft_putnbr_un(va_arg(ap, unsigned int));
 			format++;
 		}	
 	}
@@ -51,7 +58,9 @@ int	ft_printf(const	char *format, ...)
 }
 int main ()
 {
-	int f;
-	f = ft_printf("abdjana%sc", "helloworld");
+	 int f;
+	
+	 f = ft_printf("%x\n", 103);
+	// printf("%x", 103);
 	
 }

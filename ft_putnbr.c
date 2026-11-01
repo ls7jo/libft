@@ -6,7 +6,7 @@
 /*   By: ameryan <ameryan@student.42amman.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/28 19:26:17 by ameryan           #+#    #+#             */
-/*   Updated: 2026/10/28 20:28:11 by ameryan          ###   ########.fr       */
+/*   Updated: 2026/11/01 19:56:53 by ameryan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,22 +15,28 @@
 int ft_putnbr(int n)
 {
 	long num;
+	int count;
 	
+	count = 0;
 	num = n;
-	if(n < 0)
+	if(num < 0)
 	{
 		num = -num;
-		write(1, '-', 1);
+		write(1, "-", 1);
+		count++;
 	}
 	if(num > 9)
 	{
-		num = (n % 10) + '0';
-		ft_putnbr(n / 10);
+		count += ft_putnbr(num / 10);
+		num = (num % 10) + '0';
 		write(1, &num, 1);
+		count++;
 	}
-	if (n < 10)
+	if (num < 10)
 	{
-		num = n + '0';
+		num = num + '0';
 		write(1, &num, 1);
+		count++;
 	}
+	return (count);
 }
